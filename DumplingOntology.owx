@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/marin/ontologies/2024/11/untitled-ontology-4"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/marin/ontologies/2024/11/untitled-ontology-4">
+    <Prefix name="" IRI="http://www.semanticweb.org/marin/ontologies/2024/11/untitled-ontology-4/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/marin/ontologies/2024/11/Flavor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Baking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BeefFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BoiledDumpling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Boiling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChickenFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChiliOil"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CookingMethod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DietaryRestriction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dough"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dumpling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Filling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FriedDumpling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Frying"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GlutenFree"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GlutenFreeDough"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GlutenFreeSteamedDumpling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Halal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ingredient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LactoseIntolerantFriendly"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeatFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NutFree"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PorkFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sauce"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Savory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SesameOil"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShellfishFree"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShrimpFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoySauce"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Spicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpicyFriedDumpling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SteamedDumpling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Steaming"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sweet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TofuFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vegan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VeganBoiledDumpling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VegetableFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vegetarian"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinegar"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#cookedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFilling"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFlavor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasIngredient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isIngredientOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#satisfies"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#servedWith"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#GlutenFreeSteamedDumpling"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#SteamedDumpling"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#cookedBy"/>
+                <Class IRI="#Steaming"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#satisfies"/>
+                <Class IRI="#GlutenFree"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SpicyFriedDumpling"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#FriedDumpling"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#cookedBy"/>
+                <Class IRI="#Frying"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasFlavor"/>
+                <Class IRI="#Spicy"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#VeganBoiledDumpling"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#BoiledDumpling"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#cookedBy"/>
+                <Class IRI="#Boiling"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#satisfies"/>
+                <Class IRI="#Vegan"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Baking"/>
+        <Class IRI="#CookingMethod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BeefFilling"/>
+        <Class IRI="#MeatFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BoiledDumpling"/>
+        <Class IRI="#Dumpling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Boiling"/>
+        <Class IRI="#CookingMethod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChickenFilling"/>
+        <Class IRI="#MeatFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChiliOil"/>
+        <Class IRI="#Sauce"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dough"/>
+        <Class IRI="#Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Filling"/>
+        <Class IRI="#Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FriedDumpling"/>
+        <Class IRI="#Dumpling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Frying"/>
+        <Class IRI="#CookingMethod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GlutenFree"/>
+        <Class IRI="#DietaryRestriction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GlutenFreeDough"/>
+        <Class IRI="#Dough"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GlutenFreeSteamedDumpling"/>
+        <Class IRI="#SteamedDumpling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Halal"/>
+        <Class IRI="#DietaryRestriction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LactoseIntolerantFriendly"/>
+        <Class IRI="#DietaryRestriction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeatFilling"/>
+        <Class IRI="#Filling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NutFree"/>
+        <Class IRI="#DietaryRestriction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PorkFilling"/>
+        <Class IRI="#MeatFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Savory"/>
+        <Class IRI="http://www.semanticweb.org/marin/ontologies/2024/11/Flavor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SesameOil"/>
+        <Class IRI="#Sauce"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShellfishFree"/>
+        <Class IRI="#DietaryRestriction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShrimpFilling"/>
+        <Class IRI="#MeatFilling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoySauce"/>
+        <Class IRI="#Sauce"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Spicy"/>
+        <Class IRI="http://www.semanticweb.org/marin/ontologies/2024/11/Flavor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpicyFriedDumpling"/>
+        <Class IRI="#FriedDumpling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SteamedDumpling"/>
+        <Class IRI="#Dumpling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Steaming"/>
+        <Class IRI="#CookingMethod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sweet"/>
+        <Class IRI="http://www.semanticweb.org/marin/ontologies/2024/11/Flavor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TofuFilling"/>
+        <Class IRI="#Filling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vegan"/>
+        <Class IRI="#DietaryRestriction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VeganBoiledDumpling"/>
+        <Class IRI="#BoiledDumpling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VegetableFilling"/>
+        <Class IRI="#Filling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vegetarian"/>
+        <Class IRI="#DietaryRestriction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vinegar"/>
+        <Class IRI="#Sauce"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFlavor"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasIngredient"/>
+        <ObjectProperty IRI="#isIngredientOf"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#cookedBy"/>
+        <Class IRI="#BoiledDumpling"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#cookedBy"/>
+        <Class IRI="#FriedDumpling"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#cookedBy"/>
+        <Class IRI="#SteamedDumpling"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFilling"/>
+        <Class IRI="#Dumpling"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFlavor"/>
+        <Class IRI="#Dumpling"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasIngredient"/>
+        <Class IRI="#Dumpling"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#satisfies"/>
+        <Class IRI="#Dumpling"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#servedWith"/>
+        <Class IRI="#Dumpling"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#cookedBy"/>
+        <Class IRI="#CookingMethod"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFilling"/>
+        <Class IRI="#Filling"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFlavor"/>
+        <Class IRI="http://www.semanticweb.org/marin/ontologies/2024/11/Flavor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasIngredient"/>
+        <Class IRI="#Ingredient"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#satisfies"/>
+        <Class IRI="#DietaryRestriction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#servedWith"/>
+        <Class IRI="#Sauce"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
