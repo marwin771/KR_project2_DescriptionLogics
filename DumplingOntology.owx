@@ -46,6 +46,9 @@
         <Class IRI="#Dumpling"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#DumplingCombo"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Filling"/>
     </Declaration>
     <Declaration>
@@ -73,10 +76,16 @@
         <Class IRI="#LactoseIntolerantFriendly"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#MeatDumpling"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#MeatFilling"/>
     </Declaration>
     <Declaration>
         <Class IRI="#NutFree"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PopularDumpling"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PorkFilling"/>
@@ -130,6 +139,9 @@
         <Class IRI="#Vegetarian"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#VegetarianDumpling"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Vinegar"/>
     </Declaration>
     <Declaration>
@@ -153,14 +165,50 @@
     <Declaration>
         <ObjectProperty IRI="#servedWith"/>
     </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usedFor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#BoiledDumpling"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Dumpling"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#cookedBy"/>
+                <Class IRI="#Boiling"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DumplingCombo"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Dumpling"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasFilling"/>
+                <Class IRI="#Filling"/>
+            </ObjectMinCardinality>
+            <ObjectExactCardinality cardinality="2">
+                <ObjectProperty IRI="#servedWith"/>
+                <Class IRI="#Sauce"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FriedDumpling"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Dumpling"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#cookedBy"/>
+                <Class IRI="#Frying"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#GlutenFreeSteamedDumpling"/>
         <ObjectIntersectionOf>
             <Class IRI="#SteamedDumpling"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#cookedBy"/>
-                <Class IRI="#Steaming"/>
-            </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#satisfies"/>
                 <Class IRI="#GlutenFree"/>
@@ -168,13 +216,38 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#MeatDumpling"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Dumpling"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasFilling"/>
+                <Class IRI="#MeatFilling"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PopularDumpling"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="#Dumpling"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#cookedBy"/>
+                    <Class IRI="#Steaming"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="#Dumpling"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasFilling"/>
+                    <Class IRI="#PorkFilling"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#SpicyFriedDumpling"/>
         <ObjectIntersectionOf>
             <Class IRI="#FriedDumpling"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#cookedBy"/>
-                <Class IRI="#Frying"/>
-            </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#hasFlavor"/>
                 <Class IRI="#Spicy"/>
@@ -182,17 +255,35 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#SteamedDumpling"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Dumpling"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#cookedBy"/>
+                <Class IRI="#Steaming"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#VeganBoiledDumpling"/>
         <ObjectIntersectionOf>
             <Class IRI="#BoiledDumpling"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#cookedBy"/>
-                <Class IRI="#Boiling"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#satisfies"/>
                 <Class IRI="#Vegan"/>
             </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#VegetarianDumpling"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Dumpling"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasFilling"/>
+                    <Class IRI="#MeatFilling"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <SubClassOf>
@@ -224,6 +315,10 @@
         <Class IRI="#Ingredient"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#DumplingCombo"/>
+        <Class IRI="#Dumpling"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Filling"/>
         <Class IRI="#Ingredient"/>
     </SubClassOf>
@@ -256,12 +351,20 @@
         <Class IRI="#DietaryRestriction"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#MeatDumpling"/>
+        <Class IRI="#Dumpling"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#MeatFilling"/>
         <Class IRI="#Filling"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#NutFree"/>
         <Class IRI="#DietaryRestriction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PopularDumpling"/>
+        <Class IRI="#Dumpling"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PorkFilling"/>
@@ -328,13 +431,31 @@
         <Class IRI="#DietaryRestriction"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#VegetarianDumpling"/>
+        <Class IRI="#Dumpling"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Vinegar"/>
         <Class IRI="#Sauce"/>
     </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#MeatDumpling"/>
+        <Class IRI="#VegetarianDumpling"/>
+    </DisjointClasses>
+    <DisjointUnion>
+        <Class IRI="#Dumpling"/>
+        <Class IRI="#BoiledDumpling"/>
+        <Class IRI="#FriedDumpling"/>
+        <Class IRI="#SteamedDumpling"/>
+    </DisjointUnion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasFlavor"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#cookedBy"/>
+        <ObjectProperty IRI="#usedFor"/>
+    </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasIngredient"/>
         <ObjectProperty IRI="#isIngredientOf"/>
@@ -371,6 +492,10 @@
         <ObjectProperty IRI="#servedWith"/>
         <Class IRI="#Dumpling"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usedFor"/>
+        <Class IRI="#CookingMethod"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#cookedBy"/>
         <Class IRI="#CookingMethod"/>
@@ -395,6 +520,15 @@
         <ObjectProperty IRI="#servedWith"/>
         <Class IRI="#Sauce"/>
     </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usedFor"/>
+        <Class IRI="#Dumpling"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#PopularDumpling</IRI>
+        <Literal>A PopularDumpling is either a dumpling cooked by steaming or a dumpling with a pork filling.</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
